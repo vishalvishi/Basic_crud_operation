@@ -6,8 +6,7 @@
 }
 
 #table_modal{
-  max-width: 100%;
-  max-height:100%;
+ 
   
   border: 1px solid #ccc;
   text-align: center;
@@ -102,8 +101,7 @@ background-size: cover;
 }
 
 #filebox{
-  max-width: 100%;
-  max-height:100%;
+ 
  
   border: 1px solid #ccc;
   text-align: center;
@@ -120,8 +118,7 @@ background-size: cover;
 }
 
 #img_box{
-  max-width: 100%;
-  max-height:100%;
+
   
   border: 1px solid #ccc;
   text-align: center;
@@ -138,8 +135,7 @@ background-size: cover;
 }
 
 #file_box{
-  max-width: 100%;
-  max-height:100%;
+
   
   border: 1px solid #ccc;
   text-align: center;
@@ -215,8 +211,7 @@ background-size: cover;
 }
 
 #viewbox{
-  max-width: 100%;
-  max-height:100%;
+
  
   border: 1px solid #ccc;
   text-align: center;
