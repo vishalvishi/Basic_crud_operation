@@ -17,8 +17,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
+ 
+  
   padding: 10px;
  
 }
@@ -111,8 +111,7 @@ background-size: cover;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
+ 
   padding: 10px;
   display: none;
 }
@@ -128,8 +127,7 @@ background-size: cover;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
+  
   padding: 10px;
   display: none;
 }
@@ -146,8 +144,7 @@ background-size: cover;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
+  
   padding: 10px;
   display: none;
 }
@@ -221,8 +218,7 @@ background-size: cover;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
+ 
   padding: 10px;
   display: none;
 
