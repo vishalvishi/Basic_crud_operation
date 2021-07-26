@@ -388,9 +388,9 @@ function hideTable() {
 function showTable(){
    // if (view3=== null) {
         document.getElementById("employeeList1").style.display = "inline-block";
-        document.getElementById("bl").style.filter="blur(100px)";
-        document.getElementById("bl1").style.filter="blur(100px)";
-        document.getElementById("bl2").style.filter="blur(100px)";
+        document.getElementById("bl").style.filter="blur(6px)";
+        document.getElementById("bl1").style.filter="blur(6px)";
+        document.getElementById("bl2").style.filter="blur(6px)";
      //   view3 = true
    // } else {
       //  document.getElementById('employeeList1').style.display= "none";
