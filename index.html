@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        dynamic form
+    </title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/asset/js/css/popup.css">
+   
+</head>
+
+<body style="" onload="hideTable()">
+<div id="bl" class="b10"style="border-radius:20px;height:50%;width:900px;float:left;text-align:left; padding:50px;">
+        
+            <center><h1>CANDIDATE REGISTRATION FORM</h1></center>
+        
+
+        <div><form onsubmit="event.preventDefault();onFormSubmit(event);" enctype="multipart/form-data">
+            <br><b><label for="name">NAME</label></b><br>
+            <input style="border-radius:60px;outline: none;  padding: 10px;border:solid 3px;border-color: rgb(76, 0, 255);" type="text" name="name" id="name" placeholder="Name" /></br>
+            
+            
+            <br><b><label for="DOB">DOB</label></b><br>
+            <input style="border-radius:60px;outline: none;padding: 10px;border:solid 3px;border-color: rgb(76, 0, 255);"type="DATE" name="lname" id="dob" /></br>
+            <br><b><label for="AGE">AGE</label></b><br>
+            <input style="border-radius:60px;outline: none;padding: 10px;border:solid 3px;border-color: rgb(76, 0, 255);"type="text" name="age" id="age" placeholder="Age" /><br>
+            <br><b><label for="course">COURSE</label></b><br>
+            <select style="border-radius:60px;outline: none;padding: 10px;border:solid 3px;border-color: rgb(76, 0, 255);" id="course">
+                <option class="dropdown" value="">----</option>
+                <option class="dropdown" value="HTML">HTML</option>
+                <option class="dropdown" value="JAVA SCRIPT">JAVA SCRIPT</option>
+                <option class="dropdown" value="CSS">CSS</option>
+                <option class="dropdown" value="C++">C++</option>
+            </select><br>
+            <br><b><label for="EMAIL">EMAIL</label></b><br>
+            <input style="border-radius:60px;outline: none;padding: 10px;border:solid 3px;border-color: rgb(76, 0, 255);"type="email" size="30" name="email" id="email" placeholder="Email-Id" /><br>
+            <br><b><label for="PHONE">PHONE</label></b><br>
+            <input style="border-radius:60px;outline: none;padding: 10px;border:solid 3px;border-color: rgb(76, 0, 255);"type="text" name="PHONE" id="phone" placeholder="Phone Number" /><br>
+            <br><b><label for="certificate">CERTIFICATE</label></b><br>
+            <input type="file" id="file" name="file" onchange="fileUploaded()">
+           <a href="#" onclick="v_file()"><textarea style="width: 45%;color: darkblue;" id="file7" disabled></textarea></a><br>
+           <button style="padding:8px;" class="b11"onclick="file_edit()" id="f_edit">EDIT</button><br>
+           
+            <br><b><label for="photo">PHOTO</label></b><br>
+            <input type="file" id="photo" name="photo" onchange="imageUploaded()">
+            <a href="#" onclick="v_photo()" ><textarea style="width: 45%;color: darkblue;" id="photo7" disabled></textarea></a><br>
+            <button style="padding:8px;" class="b11"onclick="photo_edit()" id="p_edit">EDIT</button><br>
+           
+            <br><input style="padding:15px;" class="b11"id="d_submit" type="submit" value="SUBMIT" />
+            <input  style="padding:15px;" class="b11" id="d_reset" type="reset" value="RESET" />
+            <button style="padding:15px;" class="b11"id="d_update" id="update" onclick="updateForm()">UPDATE</button>
+            <button style="padding:15px;" class="b11"id="d_add" onclick="add_more()">ADD MORE</button><br>
+            
+        </form></div>
+       
+        <!--<img src="nature.jpg" alt="Girl in a jacket" width="500" height="600">
+        <a id="c_view" href="">view Certificate</a>
+        <a id="p_view" href="">view Photo</a>-->
+       
+
+    </div>
+    
+    <div style="float: left;top:170px;position:absolute;border-radius:100px;left:480px;">
+        
+        <img id="bl1" style="border-radius:20px;" height="700px" width="510px" src="/asset/js/css/img/img3.jpg" alt="img"/>
+    </div>
+    <button id="bl2" onclick="showTable()" style="position: absolute;padding:8px;top:800px;border-radius:10px;margin-left: -330px;" class="b11">VIEW ALL DATA</button>
+
+    <script src="/asset/js/index.js"></script><br>
+
+    <div id="img_box">
+    <img style="width:400px;height:300px;display:block;margin-left: auto;margin-right: auto;" id="img_box1" src=""/><br>
+    <a id="img_box2" style="text-decoration:none;" href="" download=""><button style="padding:15px;" class="b11">Dowload</button></a>    
+    <a style="padding:15px;" class="close" onclick="pop3()">Close Box</a>
+    </div>
+
+    <div id="filebox">
+        <img  style="width:600px;height:350px;display:block;margin: 0 auto;" id="imgBase_64"/><br>
+        <a id="img_box3"style="text-decoration:none;" href="" download=""><button style="padding:15px;" class="b11">Dowload</button></a>    
+        <a style="padding:15px;"class="close" onclick="pop1()">Close Box</a>
+    </div>
+
+    <div id="viewbox">
+        <iframe src="" style="width:600px;height:350px;display:block;margin: 0 auto;" id="base_64"></iframe><br>
+        <a id="file_box4" style="text-decoration:none;" href="" download=""><button style="padding:15px;" class="b11">Dowload</button></a>    
+        <a style="padding:15px;"class="close" onclick="pop2()">Close Box</a>
+    </div>
+    
+    <div id="file_box">
+        <iframe src="" style="width:600px;height:350px;display:block;margin: 0 auto;" id="file_box1"  frameborder="0"></iframe><br>
+        <a id="file_box2"  style="text-decoration:none;" href="" download=""><button style="padding:15px;" class="b11">Dowload</button></a>    
+        <a style="padding:15px;" class="close" onclick="pop4()">Close Box</a>
+    </div>
+
+<div id="employeeList1">
+    <div id="table_modal" style="border:solid 2px rgb(255, 255, 255);position:absolute;margin-left:2%;box-shadow: 20px 20px 20px black;overflow: scroll;">
+        <table border="2"id="employeeList" >
+            <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>DOB</th>
+                    <th>AGE</th>
+                    <th>COURSE</th>
+                    <th>EMAIL</th>
+                    <th>PHONE</th>
+                    <th>CERTIFICATE</th>
+                    <th>PHOTO</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody id="u_data">
+            </tbody>
+        </table>
+        <br>
+        <button onclick="hideTable()"style="padding:15px;background-color: red;" class="b11">CLOSE</button>
+    </div>
+    </div>
+
+</body>
+
+</html>
