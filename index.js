@@ -2,20 +2,18 @@ var selectedRow = null;
 var l = 0;
 var m = 0;
 var userData = [];
-
-
-
-
-
+//Function for viewing data
 function dataView(actionId, indexData) {
     console.log(actionId, indexData, "action details");
     let mb = "";
+//To delete row in the table
     if (actionId.id == "dd") {
         row = actionId.parentElement.parentElement;
         document.getElementById("employeeList").deleteRow(row.rowIndex);
         userData.splice(indexData, 1)
     }
-    else if(actionId.id=="ud"){
+//To update the values in the form
+    else if (actionId.id == "ud") {
         document.getElementById("d_submit").style.display = "none";
         document.getElementById("d_update").style.display = "inline-block";
         document.getElementById("d_reset").style.display = "none";
@@ -24,9 +22,9 @@ function dataView(actionId, indexData) {
         document.getElementById("p_edit").style.display = "inline";
         document.getElementById("file").style.display = "none";
         document.getElementById("photo").style.display = "none";
-        document.getElementById("bl1").style.filter="blur(0px)";
-        document.getElementById("bl").style.filter="blur(0px)";
-        document.getElementById("bl2").style.filter="blur(0px)";
+        document.getElementById("bl1").style.filter = "blur(0px)";
+        document.getElementById("bl").style.filter = "blur(0px)";
+        document.getElementById("bl2").style.filter = "blur(0px)";
         userData.forEach((element, index) => {
             if (index == indexData) {
                 localStorage.setItem("viewElement", index);
@@ -48,13 +46,11 @@ function dataView(actionId, indexData) {
         document.getElementById("phone").disabled = false;
         document.getElementById("file7").style.display = "inline-block";
         document.getElementById("photo7").style.display = "inline-block";
-        document.getElementById("file7").innerHTML= mb.file.replace(" ","_").replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(mb.dat).concat(".").concat("pdf");
-        document.getElementById("photo7").innerHTML= mb.photo.replace(" ","_").replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(mb.dat).concat(".").concat("jpg");
-        //document.getElementById("c_view").href = mb.file;
-       // document.getElementById("p_view").href = mb.photo;
-        
-        }else{
-            document.getElementById("d_submit").style.display = "none";
+        document.getElementById("file7").innerHTML = mb.file.replace(" ", "_").replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(mb.dat).concat(".").concat("pdf");
+        document.getElementById("photo7").innerHTML = mb.photo.replace(" ", "_").replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(mb.dat).concat(".").concat("jpg");
+    } else {
+ //To view the data in the form
+        document.getElementById("d_submit").style.display = "none";
         document.getElementById("d_update").style.display = "none";
         document.getElementById("d_reset").style.display = "none";
         document.getElementById("d_add").style.display = "inline-block";
@@ -62,47 +58,41 @@ function dataView(actionId, indexData) {
         document.getElementById("photo").style.display = "none";
         document.getElementById("f_edit").style.display = "none";
         document.getElementById("p_edit").style.display = "none";
-        document.getElementById("bl1").style.filter="blur(0px)";
-        document.getElementById("bl").style.filter="blur(0px)";
-        document.getElementById("bl2").style.filter="blur(0px)";
+        document.getElementById("bl1").style.filter = "blur(0px)";
+        document.getElementById("bl").style.filter = "blur(0px)";
+        document.getElementById("bl2").style.filter = "blur(0px)";
 
-            userData.forEach((element, index) => {
-                if (index == indexData) {
-                    localStorage.setItem("viewElement", index);
-                    mb = element;
-                }
-            });
-            console.log(mb, "mb value");
-            document.getElementById("name").value = mb.name;
-            document.getElementById("name").disabled = true;
-            document.getElementById("dob").value = mb.dob;
-            document.getElementById("dob").disabled = true;
-            document.getElementById("age").value = mb.age;
-            document.getElementById("age").disabled = true;
-            document.getElementById("course").value = mb.course;
-            document.getElementById("course").disabled = true;
-            document.getElementById("email").value = mb.email;
-            document.getElementById("email").disabled = true;
-            document.getElementById("phone").value = mb.phone;
-            document.getElementById("phone").disabled = true;
-           
-           // document.getElementById("file").type ="text";
-           // document.getElementById("photo").type="text";
-            document.getElementById("file7").style.display = "inline-block";
-            document.getElementById("photo7").style.display = "inline-block";
-            document.getElementById("file7").innerHTML= mb.file.split(' ').join('_').replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(mb.dat).concat(".").concat("pdf");
-            document.getElementById("file_box2").download= mb.file.split(' ').join('_').replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(mb.dat).concat(".").concat("pdf");
-            document.getElementById("photo7").innerHTML= mb.photo.split(' ').join('_').replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(mb.dat).concat(".").concat("jpg");
-            document.getElementById("img_box2").download=mb.photo.split(' ').join('_').replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(mb.dat).concat(".").concat("jpg");
-            // document.getElementById("c_view").href = mb.file;
-            //document.getElementById("p_view").href = mb.photo;
-
-        
-        }
+        userData.forEach((element, index) => {
+            if (index == indexData) {
+                localStorage.setItem("viewElement", index);
+                mb = element;
+            }
+        });
+        console.log(mb, "mb value");
+        document.getElementById("name").value = mb.name;
+        document.getElementById("name").disabled = true;
+        document.getElementById("dob").value = mb.dob;
+        document.getElementById("dob").disabled = true;
+        document.getElementById("age").value = mb.age;
+        document.getElementById("age").disabled = true;
+        document.getElementById("course").value = mb.course;
+        document.getElementById("course").disabled = true;
+        document.getElementById("email").value = mb.email;
+        document.getElementById("email").disabled = true;
+        document.getElementById("phone").value = mb.phone;
+        document.getElementById("phone").disabled = true;
+        document.getElementById("file7").style.display = "inline-block";
+        document.getElementById("photo7").style.display = "inline-block";
+        document.getElementById("file7").innerHTML = mb.file.split(' ').join('_').replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(mb.dat).concat(".").concat("pdf");
+        document.getElementById("file_box2").download = mb.file.split(' ').join('_').replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(mb.dat).concat(".").concat("pdf");
+        document.getElementById("photo7").innerHTML = mb.photo.split(' ').join('_').replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(mb.dat).concat(".").concat("jpg");
+        document.getElementById("img_box2").download = mb.photo.split(' ').join('_').replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(mb.dat).concat(".").concat("jpg");
+       
     }
-
-    function add_more(){
-        resetForm();
+}
+//To add extra form details
+function add_more() {
+    resetForm();
     document.getElementById("name").disabled = false;
     document.getElementById("dob").disabled = false;
     document.getElementById("age").disabled = false;
@@ -119,23 +109,21 @@ function dataView(actionId, indexData) {
     document.getElementById("f_edit").style.display = "none";
     document.getElementById("p_edit").style.display = "none";
     document.getElementById("d_update").style.display = "none";
-    document.getElementById("bl1").style.filter="blur(0px)";
-    document.getElementById("bl").style.filter="blur(0px)";
-    document.getElementById("bl2").style.filter="blur(0px)";
-    }
-
-
+    document.getElementById("bl1").style.filter = "blur(0px)";
+    document.getElementById("bl").style.filter = "blur(0px)";
+    document.getElementById("bl2").style.filter = "blur(0px)";
+}
 
 var d;
 function onFormSubmit(data) {
     console.log(data.id);
     var today = new Date();
-    var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+    var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
     var time = today.getHours() + "-" + today.getMinutes() + "-" + today.getSeconds();
-    var dateTime = date+'-'+time;
+    var dateTime = date + '-' + time;
     d = dateTime.toString();
+//Validating the form
     if (validate()) {
-      //  var formData = readFormData();
         let data = {
             name: document.getElementById("name").value,
             dob: document.getElementById("dob").value,
@@ -150,26 +138,24 @@ function onFormSubmit(data) {
             img_base_64_string: imageBase64String
         };
         userData.push(data);
-        
+
         tableForm();
         resetForm();
     }
 }
-//let base64String_s="";
+//Converting file into base64 string
 let base64String = "";
 function fileUploaded() {
     var file = document.getElementById("file").value.replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.');
     var file5 = document.querySelector('input[type=file]')['files'][0];
     var reader = new FileReader();
     reader.onload = function () {
-       // base64String_s = reader.result;
-        
-        base64String = reader.result;//.replace("application", file);
-        console.log(base64String,"string for copy");
+        base64String = reader.result;
+        console.log(base64String, "string for copy");
     }
     reader.readAsDataURL(file5);
 }
-
+//To display file on table
 var view_b64 = null
 function view_base_64(indexData) {
     let nb = "";
@@ -182,12 +168,9 @@ function view_base_64(indexData) {
         }
     }
     );
-    var s=  base64String;
-
-    document.getElementById("base_64").src =nb.base_64_string;
-    document.getElementById("file_box4").href=nb.base_64_string;
-   
-    console.log(s,"ssssssssttttttttttttt");
+    var s = base64String;
+    document.getElementById("base_64").src = nb.base_64_string;
+    document.getElementById("file_box4").href = nb.base_64_string;
     if (view_b64 === null) {
         document.getElementById("viewbox").style.display = "block";
         view_b64 = true
@@ -196,19 +179,19 @@ function view_base_64(indexData) {
         view_b64 = null
     }
 }
-
+//Converting image into base64 string
 let imageBase64String = "";
 function imageUploaded() {
     var img = document.getElementById("photo").value.replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.');
     var file6 = document.querySelector('input[name=photo]')['files'][0];
     var reader = new FileReader();
     reader.onload = function () {
-        imageBase64String = reader.result;//.replace("image", img);
-        console.log(imageBase64String,"image string");
+        imageBase64String = reader.result;
+        console.log(imageBase64String, "image string");
     }
     reader.readAsDataURL(file6);
 }
-
+//To display image on table
 var box = null
 function img_base_64(indexData) {
     let ib = "";
@@ -221,11 +204,11 @@ function img_base_64(indexData) {
         }
     }
     );
- 
- 
+
+
     document.getElementById("imgBase_64").src = ib.img_base_64_string;
-    document.getElementById("img_box3").href=ib.img_base_64_string;
-   
+    document.getElementById("img_box3").href = ib.img_base_64_string;
+
     if (box === null) {
         document.getElementById("filebox").style.display = "block";
         box = true
@@ -234,7 +217,7 @@ function img_base_64(indexData) {
         box = null
     }
 }
-
+//Updating the form
 function updateForm() {
     document.getElementById("d_submit").style.display = "inline-block";
     document.getElementById("d_update").style.display = "none";
@@ -244,14 +227,14 @@ function updateForm() {
     document.getElementById("photo7").style.display = "none";
     document.getElementById("f_edit").style.display = "none";
     document.getElementById("p_edit").style.display = "none";
-    document.getElementById("bl1").style.filter="blur(0px)";
-    document.getElementById("bl").style.filter="blur(0px)";
-    document.getElementById("bl2").style.filter="blur(0px)";
+    document.getElementById("bl1").style.filter = "blur(0px)";
+    document.getElementById("bl").style.filter = "blur(0px)";
+    document.getElementById("bl2").style.filter = "blur(0px)";
     if (validate()) {
         var today = new Date();
-        var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+        var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
         var time = today.getHours() + "-" + today.getMinutes() + "-" + today.getSeconds();
-        var dateTime = date+'-'+time;
+        var dateTime = date + '-' + time;
         d = dateTime.toString();
         let updateId = localStorage.getItem("viewElement");
         let data = {
@@ -274,13 +257,13 @@ function updateForm() {
         resetForm();
     }
 }
-
-function vv_photo(index_Data){
-    window.ph=index_Data;
+//Getting index number
+function vv_photo(index_Data) {
+    window.ph = index_Data;
 }
-
-view_b64_photo=null;
-function v_photo(){
+//To display photo
+view_b64_photo = null;
+function v_photo() {
     var i_b = "";
     console.log(window.ph, "action details");
     userData.forEach((elemen2, index_) => {
@@ -290,10 +273,10 @@ function v_photo(){
         }
     }
     );
-    
-    document.getElementById("img_box1").src=i_b.img_base_64_string;
-    document.getElementById("img_box2").href=i_b.img_base_64_string;
-   
+
+    document.getElementById("img_box1").src = i_b.img_base_64_string;
+    document.getElementById("img_box2").href = i_b.img_base_64_string;
+
     if (view_b64_photo === null) {
         document.getElementById("img_box").style.display = "block";
         view_b64_photo = true
@@ -302,13 +285,13 @@ function v_photo(){
         view_b64_photo = null
     }
 }
-
-function vv_file(index_data){
-    window.fh=index_data;
+//Getting index number
+function vv_file(index_data) {
+    window.fh = index_data;
 }
-
-view_b64_file=null;
-function v_file(){
+//To display the file
+view_b64_file = null;
+function v_file() {
     var j_b = "";
     console.log(window.fh, "action details");
     userData.forEach((elemen3, index_s) => {
@@ -318,9 +301,9 @@ function v_file(){
         }
     }
     );
-    
-    document.getElementById("file_box1").src=j_b.base_64_string;
-    document.getElementById("file_box2").href=j_b.base_64_string;
+
+    document.getElementById("file_box1").src = j_b.base_64_string;
+    document.getElementById("file_box2").href = j_b.base_64_string;
     if (view_b64_file === null) {
         document.getElementById("file_box").style.display = "block";
         view_b64_file = true
@@ -329,26 +312,25 @@ function v_file(){
         view_b64_file = null
     }
 }
-
-function file_edit(){
+//Editing the file
+function file_edit() {
     document.getElementById("file7").style.display = "none";
     document.getElementById("file").style.display = "inline-block";
     document.getElementById("f_edit").style.display = "none";
-   
-}
 
-function photo_edit(){
+}
+//Editing the photo
+function photo_edit() {
     document.getElementById("photo7").style.display = "none";
     document.getElementById("photo").style.display = "inline-block";
     document.getElementById("p_edit").style.display = "none";
-   
-}
 
+}
 //Getting values from the form
 function readFormData() {
     return true;
 }
-
+//Creating the table
 function tableForm() {
     let tb = "";
     userData.forEach((element, index) => {
@@ -377,30 +359,22 @@ function resetForm() {
     document.getElementById("file").value = "";
     document.getElementById("photo").value = "";
 }
-
+//To hide the table
 function hideTable() {
-    document.getElementById('employeeList1').style.display= "none";
-    document.getElementById("bl").style.filter="blur(0px)";
-        document.getElementById("bl1").style.filter="blur(0px)";
-        document.getElementById("bl2").style.filter="blur(0px)";
+    document.getElementById('employeeList1').style.display = "none";
+    document.getElementById("bl").style.filter = "blur(0px)";
+    document.getElementById("bl1").style.filter = "blur(0px)";
+    document.getElementById("bl2").style.filter = "blur(0px)";
 }
-//var view3=null
-function showTable(){
-   // if (view3=== null) {
-        document.getElementById("employeeList1").style.display = "inline-block";
-        document.getElementById("bl").style.filter="blur(6px)";
-        document.getElementById("bl1").style.filter="blur(6px)";
-        document.getElementById("bl2").style.filter="blur(6px)";
-     //   view3 = true
-   // } else {
-      //  document.getElementById('employeeList1').style.display= "none";
-       // document.getElementById("bl").style.filter="blur(0px)";
-       // document.getElementById("bl1").style.filter="blur(0px)";
-       // view3 = null
-  //  }
-        console.log(view3,"frrrrrrr");
-    }
+//To show the table
+function showTable() {
     
+    document.getElementById("employeeList1").style.display = "inline-block";
+    document.getElementById("bl").style.filter = "blur(6px)";
+    document.getElementById("bl1").style.filter = "blur(6px)";
+    document.getElementById("bl2").style.filter = "blur(6px)";
+    
+}
 // Form validation
 function validate() {
     var name1 = document.getElementById("name");
@@ -419,8 +393,6 @@ function validate() {
     var nam = /^(?!^ +$)([\w -&]+)$/;
     var phn = /^([0-9]{10})+$/;
     var mail = /^([A-Za-z0-9_.])+\@([a-z0-9])+\.([a-z])+$/;
-
-    
     if (name1.value.trim() == "") {
         alert("Please Enter Your Name");
         return false;
@@ -467,7 +439,6 @@ function validate() {
         return true;
     }
 }
-
 var box = null
 function pop1() {
     if (box === null) {
@@ -478,7 +449,6 @@ function pop1() {
         box = null
     }
 }
-
 var view = null
 function pop2() {
     if (view === null) {
@@ -489,7 +459,6 @@ function pop2() {
         view = null
     }
 }
-
 var view1 = null
 function pop3() {
     if (view1 === null) {
@@ -500,7 +469,6 @@ function pop3() {
         view1 = null
     }
 }
-
 var view2 = null
 function pop4() {
     if (view2 === null) {
