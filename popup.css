@@ -4,14 +4,14 @@
   color: white;
   cursor: pointer;
 }
-@media(max-width:500px){
+@media(max-width:360px){
   #t {
     overflow: auto;
   } 
 .b10{
   position: relative;
- margin-top: 86%;
-    margin-left: 55%;
+ margin-top: 196%;
+    margin-left: 90%;
     /* right: 50%; */
     /* left: 50%; */
     /*transform: translate(-50%, -50%);*/
