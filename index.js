@@ -92,7 +92,7 @@ function dataView(actionId, indexData) {
 }
 //To add extra form details
 function add_more() {
-    resetForm();
+   resetForm();
     document.getElementById("name").disabled = false;
     document.getElementById("dob").disabled = false;
     document.getElementById("age").disabled = false;
@@ -115,8 +115,8 @@ function add_more() {
 }
 
 var d;
-function onFormSubmit(data) {
-    console.log(data.id);
+function onFormSubmit() {
+    
     var today = new Date();
     var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
     var time = today.getHours() + "-" + today.getMinutes() + "-" + today.getSeconds();
@@ -227,6 +227,9 @@ function updateForm() {
     document.getElementById("photo7").style.display = "none";
     document.getElementById("f_edit").style.display = "none";
     document.getElementById("p_edit").style.display = "none";
+    document.getElementById("file").style.display="inline-block";
+    
+    document.getElementById("photo").style.display="inline-block";
     document.getElementById("bl1").style.filter = "blur(0px)";
     document.getElementById("bl").style.filter = "blur(0px)";
     document.getElementById("bl2").style.filter = "blur(0px)";
