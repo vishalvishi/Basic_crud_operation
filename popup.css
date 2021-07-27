@@ -8,7 +8,9 @@
   #t {
     overflow: auto;
   } 
-
+  .b10{
+  position:relative;
+  }
 
 }
 #table_modal {
