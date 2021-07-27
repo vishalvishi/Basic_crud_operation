@@ -8,7 +8,24 @@
   #t {
     overflow: auto;
   } 
-  
+.b10{
+  position: relative;
+  margin-top: 100%;
+    margin-left: 100%;
+    margin-right: 150%;
+    /* right: 50%; */
+    /* left: 50%; */
+    transform: translate(-50%, -50%);
+    
+}
+.t1{
+  display: inline-block;
+    position: absolute;
+    margin-top: 170%;
+    margin-left: 90%;
+    transform: translate(-50%, -50%);
+}
+
 }
 #table_modal {
   border: 1px solid #ccc;
@@ -55,7 +72,7 @@ th {
     rgb(253, 253, 253),
     rgb(141, 200, 206)
   );
-  position:absolute;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
