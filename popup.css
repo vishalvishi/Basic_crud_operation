@@ -56,9 +56,9 @@ th {
     rgb(253, 253, 253),
     rgb(141, 200, 206)
   );
-  position:relative;
- margin-top: 50%;
- margin-left: 160%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   box-shadow: 20px 20px 20px rgb(100, 97, 97);
 }
 .b11 {
