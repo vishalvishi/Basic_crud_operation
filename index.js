@@ -11,6 +11,16 @@ function dataView(actionId, indexData) {
         row = actionId.parentElement.parentElement;
         document.getElementById("employeeList").deleteRow(row.rowIndex);
         userData.splice(indexData, 1)
+       // window.z=window.no--;
+       // console.log(indexData,"indeeeeeexxx");
+        console.log(userData,"userdata");
+        console.log(userData.lenght,"userdatalength");
+        if(userData.length==0){
+          //  window.x=1;
+            tb=`<td colspan="9" class="b15"><b>No data available in table</b></td>`
+            document.getElementById("u_data").innerHTML = tb;
+            
+         }
     }
 //To update the values in the form
     else if (actionId.id == "ud") {
@@ -22,9 +32,9 @@ function dataView(actionId, indexData) {
         document.getElementById("p_edit").style.display = "inline";
         document.getElementById("file").style.display = "none";
         document.getElementById("photo").style.display = "none";
-        document.getElementById("bl1").style.filter = "blur(0px)";
-        document.getElementById("bl").style.filter = "blur(0px)";
-        document.getElementById("bl2").style.filter = "blur(0px)";
+      //  document.getElementById("bl1").style.filter = "blur(0px)";
+      //  document.getElementById("bl").style.filter = "blur(0px)";
+      //  document.getElementById("bl2").style.filter = "blur(0px)";
         userData.forEach((element, index) => {
             if (index == indexData) {
                 localStorage.setItem("viewElement", index);
@@ -58,9 +68,9 @@ function dataView(actionId, indexData) {
         document.getElementById("photo").style.display = "none";
         document.getElementById("f_edit").style.display = "none";
         document.getElementById("p_edit").style.display = "none";
-        document.getElementById("bl1").style.filter = "blur(0px)";
-        document.getElementById("bl").style.filter = "blur(0px)";
-        document.getElementById("bl2").style.filter = "blur(0px)";
+      //  document.getElementById("bl1").style.filter = "blur(0px)";
+      //  document.getElementById("bl").style.filter = "blur(0px)";
+      //  document.getElementById("bl2").style.filter = "blur(0px)";
 
         userData.forEach((element, index) => {
             if (index == indexData) {
@@ -109,9 +119,9 @@ function add_more() {
     document.getElementById("f_edit").style.display = "none";
     document.getElementById("p_edit").style.display = "none";
     document.getElementById("d_update").style.display = "none";
-    document.getElementById("bl1").style.filter = "blur(0px)";
-    document.getElementById("bl").style.filter = "blur(0px)";
-    document.getElementById("bl2").style.filter = "blur(0px)";
+  //  document.getElementById("bl1").style.filter = "blur(0px)";
+  //  document.getElementById("bl").style.filter = "blur(0px)";
+  //  document.getElementById("bl2").style.filter = "blur(0px)";
 }
 
 var d;
@@ -230,9 +240,9 @@ function updateForm() {
     document.getElementById("file").style.display="inline-block";
     
     document.getElementById("photo").style.display="inline-block";
-    document.getElementById("bl1").style.filter = "blur(0px)";
-    document.getElementById("bl").style.filter = "blur(0px)";
-    document.getElementById("bl2").style.filter = "blur(0px)";
+   // document.getElementById("bl1").style.filter = "blur(0px)";
+   // document.getElementById("bl").style.filter = "blur(0px)";
+   // document.getElementById("bl2").style.filter = "blur(0px)";
     if (validate()) {
         var today = new Date();
         var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
@@ -253,12 +263,16 @@ function updateForm() {
             base_64_string: base64String,
             img_base_64_string: imageBase64String
         };
-        console.log(userData, "before update");
+       // console.log(userData, "before update");
         userData[updateId] = data;
-        console.log(userData, "after update");
+        window.a=window.no;
+        window.c=2;
+       // console.log(window.a,"update id")
+        //console.log(userData, "after update");
         tableForm();
         resetForm();
     }
+   
 }
 //Getting index number
 function vv_photo(index_Data) {
@@ -334,8 +348,9 @@ function readFormData() {
     return true;
 }
 //Creating the table
+window.x=1;
 function tableForm() {
-    let tb = "";
+     tb = "";
     userData.forEach((element, index) => {
         console.log(element, index, "element,index");
         tb = tb + `<tr><td>${element.name}</td>
@@ -348,9 +363,29 @@ function tableForm() {
         <td class="pointer" onclick="img_base_64(${index})">${element.photo.split(' ').join('_').replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(element.dat).concat(".").concat("jpg")}</td>
         <td><button style="padding:15px;" class="b11" id="vi"onclick="dataView(this,${index});vv_photo(${index});vv_file(${index});">VIEW</button><button style="padding:15px;" class="b11" id="ud" onclick="dataView(this,${index})">UPDATE</button><button style="padding:15px;background-color:red;" class="b11" id="dd" onclick="dataView(this,${index})">DELETE</button></td></tr>`
     });
+    
+    if(tb==""){
+       tb=`<td colspan="9"class="b15"><b>No data available in table</b></td>`
+       document.getElementById("u_data").innerHTML = tb;
+       
+    }
+    else/*if( window.c==2)*/{
+    //   window.x=window.a;
+       console.log(window.no,"elseif");
+   // }else{
+      
+      //  window.no=window.x++;
+      //  console.log(window.no,"else");
+     // window.c=1
+   // window.no=window.y;   
+   // console.log(window.no,"window no");
+    
+    
+  //  }
     document.getElementById("u_data").innerHTML = tb;
 }
-
+}
+window.c=1;
 // Reset form after data is submitted
 function resetForm() {
     document.getElementById("name").value = "";
@@ -373,9 +408,9 @@ function hideTable() {
 function showTable() {
     
     document.getElementById("employeeList1").style.display = "inline-block";
-    document.getElementById("bl").style.filter = "blur(6px)";
-    document.getElementById("bl1").style.filter = "blur(6px)";
-    document.getElementById("bl2").style.filter = "blur(6px)";
+   // document.getElementById("bl").style.filter = "blur(6px)";
+  //  document.getElementById("bl1").style.filter = "blur(6px)";
+  //  document.getElementById("bl2").style.filter = "blur(6px)";
     
 }
 // Form validation
