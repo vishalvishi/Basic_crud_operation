@@ -405,7 +405,7 @@ body{
 	display:flex;
 	align-items:center;
   justify-content:center;
-  background-image:url(/asset/js/css/img/img2.jpg);
+  background-image:url(img2.jpg);
  
   background-repeat: no-repeat;
   background-attachment: fixed;
