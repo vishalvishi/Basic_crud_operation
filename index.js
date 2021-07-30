@@ -11,12 +11,12 @@ function dataView(actionId, indexData) {
         row = actionId.parentElement.parentElement;
         document.getElementById("employeeList").deleteRow(row.rowIndex);
         userData.splice(indexData, 1)
-       // window.z=window.no--;
+        window.z=window.no--;
        // console.log(indexData,"indeeeeeexxx");
         console.log(userData,"userdata");
         console.log(userData.lenght,"userdatalength");
-        if(userData.length==0){
-          //  window.x=1;
+        if( window.z<=1){
+           window.x=1;
             tb=`<td colspan="9" class="b15"><b>No data available in table</b></td>`
             document.getElementById("u_data").innerHTML = tb;
             
@@ -369,19 +369,19 @@ function tableForm() {
        document.getElementById("u_data").innerHTML = tb;
        
     }
-    else/*if( window.c==2)*/{
-    //   window.x=window.a;
+    else if( window.c==2){
+       window.x=window.a;
        console.log(window.no,"elseif");
-   // }else{
+    }else{
       
-      //  window.no=window.x++;
-      //  console.log(window.no,"else");
-     // window.c=1
-   // window.no=window.y;   
-   // console.log(window.no,"window no");
+        window.no=window.x++;
+       console.log(window.no,"else");
+      window.c=1
+    window.no=window.y;   
+    console.log(window.no,"window no");
     
     
-  //  }
+   }
     document.getElementById("u_data").innerHTML = tb;
 }
 }
